@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import {CfUserRatingItem} from '../cf-user-rating-item';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {catchError, map} from 'rxjs/internal/operators';
 import {Observable, of} from 'rxjs';
 
-const url = 'http://codeforces.com/api/user.rating?handle=';
+// const urlUserRating = 'http://codeforces.com/api/user.rating?handle=';
+const urlUserRating_static = 'assets/staticdata/cf/user.rating.json';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -28,10 +30,11 @@ export class CodeforcesApiService {
   }
 
   getUserRating(userName: string): Observable<CfUserRatingItem[]> {
-    if ( this.cachedCfUserRatingItem.length !== 0){
+    if ( this.cachedCfUserRatingItem.length !== 0) {
       return of(this.cachedCfUserRatingItem);
     }
-    return this.http.get<CfUserRatingItem[]>(`${url}${userName}`)
+    /*return this.http.get<CfUserRatingItem[]>(`${urlUserRating}${userName}`)*/
+    return this.http.get<CfUserRatingItem[]>(`${urlUserRating_static}`)
       .pipe(
         map(ret => (ret['status'] === 'OK' ? (this.cachedCfUserRatingItem = ret['result']) : [])),
         catchError(this.handleError('getUserRating', []))
