@@ -25,3 +25,15 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## github pages
+
+    ng build --prod --build-optimizer
+    cd dist/homepage/
+    git init
+    git add .
+    git commit -m "update"
+    git remote add origin git@github.com:CroMarmot/CroMarmot.github.io.git
+    git push origin master -f
+
+or just run the script `./upload2materbrach.sh`
