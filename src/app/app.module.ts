@@ -18,21 +18,25 @@ import {
   MatPaginatorModule,
   MatSortModule
 } from '@angular/material';
-import {DashboardComponent} from './dashboard/dashboard.component';
+import {DashboardComponent} from './cs-dashboard/dashboard.component';
 import {LayoutModule} from '@angular/cdk/layout';
-import {AppCsnavComponent} from './app-csnav/app-csnav.component';
-import {CstableComponent} from './cstable/cstable.component';
+import {AppCsnavComponent} from './cs-nav/cs-nav.component';
+import {AppRoutingModule} from './routing/app-routing.module';
+import {CodeForcesComponent} from './code-forces/code-forces.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     AppCsnavComponent,
-    CstableComponent,
+    CodeForcesComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
+    /* @Angular/Material*/
     MatListModule,
     MatTreeModule,
     MatIconModule,
@@ -46,6 +50,8 @@ import {CstableComponent} from './cstable/cstable.component';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    /* Custom */
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

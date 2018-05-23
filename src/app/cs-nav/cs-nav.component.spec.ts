@@ -1,7 +1,7 @@
 
 import { fakeAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AppCsnavComponent } from './app-csnav.component';
+import { AppCsnavComponent } from './cs-nav.component';
 
 describe('AppCsnavComponent', () => {
   let component: AppCsnavComponent;
