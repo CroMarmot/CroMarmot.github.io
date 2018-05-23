@@ -10,7 +10,7 @@ import {map} from 'rxjs/operators';
 })
 export class AppCsnavComponent {
 
-  isHandset$: Observable<BreakpointState> = this.breakpointObserver.observe(Breakpoints.Handset)
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches)
     );
