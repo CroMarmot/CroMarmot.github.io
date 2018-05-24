@@ -7,7 +7,7 @@ import {AppRoutingModule} from '../routing/app-routing.module';
 @Component({
   selector: 'app-cs-nav',
   templateUrl: './cs-nav.component.html',
-  styleUrls: ['./cs-nav.component.css'],
+  styleUrls: ['./cs-nav.component.scss'],
 })
 export class AppCsnavComponent {
 

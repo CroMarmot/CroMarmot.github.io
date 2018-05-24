@@ -1,0 +1,50 @@
+<div class="mat-elevation-z8">
+  <mat-table [dataSource]="dataSource$" aria-label="Elements">
+
+    <!-- Id Column -->
+    <ng-container matColumnDef="contestId">
+      <mat-header-cell *matHeaderCellDef>contestId</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.contestId}}</mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="contestName">
+      <mat-header-cell *matHeaderCellDef>contestName</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.contestName}}</mat-cell>
+    </ng-container>
+
+    <!-- handle Column -->
+    <ng-container matColumnDef="handle">
+      <mat-header-cell *matHeaderCellDef>handle</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.handle}}</mat-cell>
+    </ng-container>
+
+    <!-- newRating Column -->
+    <ng-container matColumnDef="newRating">
+      <mat-header-cell *matHeaderCellDef>newRating</mat-header-cell>
+      <mat-cell *matCellDef="let row" [style.color]="calcColor(row.newRating)">{{row.newRating}}</mat-cell>
+    </ng-container>
+
+    <!-- oldRating Column -->
+    <ng-container matColumnDef="oldRating">
+      <mat-header-cell *matHeaderCellDef>oldRating</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.oldRating}}</mat-cell>
+    </ng-container>
+
+    <!-- rank Column -->
+    <ng-container matColumnDef="rank">
+      <mat-header-cell *matHeaderCellDef>rank</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.rank}}</mat-cell>
+    </ng-container>
+
+    <!-- ratingUpdateTimeSeconds Column -->
+    <ng-container matColumnDef="ratingUpdateTimeSeconds">
+      <mat-header-cell *matHeaderCellDef>Date</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.ratingUpdateTimeSeconds*1000 | date:'y/M/d HH:mm':'+0800'}}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  <mat-paginator [pageSizeOptions]="[10, 20, 50, 100]"></mat-paginator>
+</div>

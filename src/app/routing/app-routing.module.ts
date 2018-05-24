@@ -3,6 +3,7 @@ import { RouterModule, Routes} from '@angular/router';
 
 import { CodeForcesComponent} from '../code-forces/code-forces.component';
 import {DashboardComponent} from '../cs-dashboard/dashboard.component';
+import {UserRatingComponent} from '../code-forces/user-rating/user-rating.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
