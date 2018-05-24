@@ -1,5 +1,5 @@
 ng build --prod --build-optimizer
-cd dist/homepage/
+cd dist/
 git init
 git add .
 git commit -m "update"
