@@ -1,11 +1,11 @@
 import {Injectable} from '@angular/core';
 
 const urlOnline = {
-  'user.rating': 'http://codeforces.com/api/user.rating?handle=',
+  'user.rating': 'http://codeforces.com/api/user.rating?',
   'contest': 'https://codeforces.com/contest',
 };
 
-const url = {
+const urlStatic = {
   'user.rating': 'assets/staticdata/cf/user.rating.json',
   'contest': 'https://codeforces.com/contest',
 };
@@ -32,7 +32,7 @@ export class CodeforcesStaticService {
   }
 
   public static getUrl(): any {
-    return url;
+    return urlOnline;
   }
 
   public static getColors(): any {
