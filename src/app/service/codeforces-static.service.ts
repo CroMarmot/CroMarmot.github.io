@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 
 const urlOnline = {
-  'user.rating': 'http://codeforces.com/api/user.rating?',
+  'user.rating': 'https://codeforces.com/api/user.rating?',
   'contest': 'https://codeforces.com/contest',
 };
 
